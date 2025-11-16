@@ -11,8 +11,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req: Request, res: Response) => {
-  return res.send("It's working, 🙌");
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>My Node Server</title>
+      </head>
+      <body>
+        <h1>Welcome 🙌</h1>
+        <p>This is a full HTML page served from Express.</p>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>TypeScript</li>
+        </ul>
+      </body>
+    </html>
+  `);
 });
+
 
 
 
